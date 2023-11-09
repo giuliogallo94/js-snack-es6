@@ -30,7 +30,7 @@ function createRndNumbersArray(array, a) {
  */
 
 function createNewArray(array, a, b) {
-   array.forEach(number => {
+   array.forEach(number,index => {
     if (number > a && number < b) {
         newNumbersArray.push(number);
     }
