@@ -41,20 +41,38 @@ const bicycles = [
     }
 ]
 
-const listElem = document.querySelector("ul");
-console.log(listElem);
-let selectedBicycle = "";
 
-for (i = 0; i < bicycles.length; i++) {
-    const curObj = bicycles[i];
-    const {nome, peso} = curObj;
-    // console.log(nome, peso);
-    if (peso < 11) {
-        let nameBicycle = nome
-        console.log(nameBicycle);
-        selectedBicycle += `<li>${nameBicycle}</li>`
+
+
+let biciLeggera = bicycles[0];
+
+bicycles.forEach((curBicycles) => {
+    if(curBicycles.peso < biciLeggera.peso) {
+        biciLeggera = curBicycles;
     }
-}
+})
 
-console.log(selectedBicycle);
-listElem.innerHTML = selectedBicycle;
+const {nome, peso} = biciLeggera;
+document.getElementById("result").innerHTML = `La bici più leggera è ${nome} con peso di ${peso} kg`
+
+
+
+//************ STAMPA A SCHERMO LE BICI CON PESO MINORE DI X */
+// const listElem = document.querySelector("ul");
+// console.log(listElem);
+
+// let selectedBicycle = "";
+
+// for (i = 0; i < bicycles.length; i++) {
+//     const curObj = bicycles[i];
+//     const {nome, peso} = curObj;
+//     // console.log(nome, peso);
+//     if (peso < 11) {
+//         let nameBicycle = nome
+//         console.log(nameBicycle);
+//         selectedBicycle += `<li>${nameBicycle}</li>`
+//     }
+// }
+
+// console.log(selectedBicycle);
+// listElem.innerHTML = selectedBicycle;
